@@ -124,9 +124,9 @@ def profile():
     # User is not loggedin redirect to login page
     return redirect(url_for('login'))
 
-# @app.route('/')
-# def index():
-#     return "Hello, World!"
+@app.route('/')
+def index():
+    return "Hello, World!"
 
-# if __name__ == '__main__':
-#     app.run(debug=True)
+if __name__ == '__main__':
+    app.run(debug=True, port=os.getenv("PORT", default=5000))
