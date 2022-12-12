@@ -10,6 +10,8 @@ load_dotenv()
 app = Flask(__name__)
 
 
+app = Flask(__name__)
+
 # Change this to your secret key (can be anything, it's for extra protection)
 app.secret_key = 'your secret key'
 
@@ -124,7 +126,7 @@ def profile():
 
 @app.route('/')
 def index():
-    return "Hello, World!"
+    return "test"
 
 if __name__ == '__main__':
     app.run(debug=True)
