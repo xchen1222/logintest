@@ -10,6 +10,8 @@ load_dotenv()
 app = Flask(__name__)
 
 
+app = Flask(__name__)
+
 # Change this to your secret key (can be anything, it's for extra protection)
 app.secret_key = 'your secret key'
 
@@ -63,7 +65,7 @@ def logout():
    # Redirect to login page
    return redirect(url_for('login'))
 
-# http://localhost:5000/pythinlogin/register - this will be the registration page, we need to use both GET and POST requests
+# http://localhost:5000/pythonlogin/register - this will be the registration page, we need to use both GET and POST requests
 @app.route('/pythonlogin/register', methods=['GET', 'POST'])
 def register():
     # Output message if something goes wrong...
@@ -98,7 +100,7 @@ def register():
     # Show registration form with message (if any)
     return render_template('register.html', msg=msg)
 
-# http://localhost:5000/pythinlogin/home - this will be the home page, only accessible for loggedin users
+# http://localhost:5000/pythonlogin/home - this will be the home page, only accessible for loggedin users
 @app.route('/pythonlogin/home')
 def home():
     # Check if user is loggedin
@@ -108,7 +110,7 @@ def home():
     # User is not loggedin redirect to login page
     return redirect(url_for('login'))
 
-# http://localhost:5000/pythinlogin/profile - this will be the profile page, only accessible for loggedin users
+# http://localhost:5000/pythonlogin/profile - this will be the profile page, only accessible for loggedin users
 @app.route('/pythonlogin/profile')
 def profile():
     # Check if user is loggedin
@@ -124,7 +126,7 @@ def profile():
 
 @app.route('/')
 def index():
-    return "Hello, World!"
+    return "test"
 
 if __name__ == '__main__':
     app.run(debug=True)
